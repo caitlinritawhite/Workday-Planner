@@ -11,11 +11,6 @@ $("button").on("click", function () {
   localStorage.setItem(timeId, userTask);
 });
 
-var nineAm = localStorage.getItem("9am");
-if (nineAm) {
-  $("#9am").val(nineAm);
-  
-}
 
 
 
