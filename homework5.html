@@ -45,37 +45,37 @@
         </li>
         <li>
           <span class= "col-3">11 am</span>
-          <input class = "timeRow"   type="text" id="9am" />
+          <input class = "timeRow"   type="text" id="11am" />
           <button class="saveBtn" time="11am">Save</button>
         </li>
         <li>
           <span class= "col-3">12 pm</span>
-          <input class = "timeRow"  type="text" id="9am" />
+          <input class = "timeRow"  type="text" id="12pm" />
           <button class="saveBtn" time="12pm">Save</button>
         </li>
         <li>
           <span class= "col-3">1 pm</span>
-          <input class = "timeRow"  type="text" id="9am" />
+          <input class = "timeRow"  type="text" id="1pm" />
           <button class="saveBtn" time="1pm">Save</button>
         </li>
         <li>
           <span class= "col-3">2 pm</span>
-          <input class = "timeRow"  type="text" id="9am" />
+          <input class = "timeRow"  type="text" id="2pm" />
           <button class="saveBtn" time="2pm">Save</button>
         </li>
         <li>
           <span class= "col-3">3 pm</span>
-          <input class = "timeRow"  type="text" id="9am" />
+          <input class = "timeRow"  type="text" id="3pm" />
           <button class="saveBtn" time="3pm">Save</button>
         </li>
         <li>
           <span class= "col-3">4 pm</span>
-          <input class = "timeRow"  type="text" id="9am" />
+          <input class = "timeRow"  type="text" id="4pm" />
           <button class="saveBtn" time="4pm">Save</button>
         </li>
         <li>
           <span class= "col-3">5 pm</span>
-          <input class = "timeRow"  type="text" id="9am" />
+          <input class = "timeRow"  type="text" id="5pm" />
           <button class="saveBtn" time="5pm">Save</button>
         </li>
       </ul>
@@ -84,65 +84,6 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-
-    <script>
-      $("button").on("click", function () {
-        var timeId = $(this).attr("time");
-
-        var userTask = $(timeId).val();
-        localStorage.setItem(timeId, userTask);
-      });
-
-      var nineAM = localStorage.getItem("#9am");
-      if (nineAM) {
-        $("9am").val(nineAm);
-      }
-
-     
-    
-
-
-      for (var i = 9; i < 17; i++) {
-        // Get current hour
-    var today = new Date();
-     var currentTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-
-        var amPm = "am";
-        if (i >= 12) {
-          amPm = "pm";
-        }
-        var hour = i;
-        if (i > 12) {
-          hour -= 12;
-        }
-        
-        
-       
-        var targetId = "#" + hour + amPm;
-        //if currentTime > i  class past
- 
- 
-        var className = "past";
-
-        $(targetId).addClass(className);
-    
-    
-        
-        //else if currentTime < i class future
-        // else class current
-
-        
-
-
-
-
-
-        // moment().format("MM/DD/YYYY"));
-        // moment().format("HH:MM")
-
-
-        
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
