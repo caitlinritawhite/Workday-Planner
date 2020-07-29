@@ -11,9 +11,10 @@ $("button").on("click", function () {
   localStorage.setItem(timeId, userTask);
 });
 
-var nineAm = localStorage.getItem("#9am");
+var nineAm = localStorage.getItem("9am");
 if (nineAm) {
-  $("9am").text(nineAm);
+  $("#9am").val(nineAm);
+  
 }
 
 
@@ -22,8 +23,7 @@ if (nineAm) {
 
 for (var i = 9; i < 18; i++) {
   // Get current hour
-var today = new Date();
-var currentTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var currentTime = new Date().getHours();
 
 console.log(currentTime)
 
@@ -37,45 +37,21 @@ console.log(currentTime)
     hour -= 12;
   }
   var targetId = "#" + hour + amPm;
-
-    if(currentTime > i + amPm){
+  var timeInput = localStorage.getItem(hour + amPm);
+  if (timeInput) {
+    $(targetId).val(timeInput);
+    
+  }
+    if(i < currentTime){
       $(targetId).addClass("past");
   }
 
-  else if(currentTime < i + amPm) {
+  else if(i > currentTime) {
       $(targetId).addClass("future");
   }
 
   else{
       $(targetId).addClass("present");
   }
-
-
-
-  
-  
- 
- // var targetId = "#" + hour + amPm;
-  //if currentTime > i  class past
-
-  //var className = "past";
-
-  //$(targetId).addClass(className);
-
-
-  
-  //else if currentTime < i class future
-  // else class current
-
-  
-
-
-
-
-
-  // moment().format("MM/DD/YYYY");
-  // moment().format("HH:MM")
-
-
   
 }
